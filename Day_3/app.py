@@ -30,35 +30,35 @@ while True:
     choice1 = input('  Type "Left" or "Right": ').lower()
 
     if choice1 == "right":
-        print("You fell into a deep hole. Game over.")
+        print("\nYou fell into a deep hole. Game over.")
         sys.exit()
     elif choice1 == "left":
         break
     else:
-        print("Please type either 'Left' or 'Right'.")
+        print("\nPlease type either 'Left' or 'Right'.")
 
-print("You come across a huge lake with an island in the middle. What do you do?")
+print("\nYou come across a huge lake with an island in the middle. What do you do?")
 while True:
     choice2 = input('Type "Swim" to swim across or "Wait" to wait for a boat: ').lower()
     if choice2 == "swim":
-        print("You got attacked by an angry trout! Game over.")
+        print("\nYou got attacked by an angry trout! Game over.")
         sys.exit()
     if choice2 == "wait":
         break
     else:
-        print('Please type either "Swim" or "Wait".')
+        print('\nPlease type either "Swim" or "Wait".')
 
-print("The boat takes you to the island where you find 3 doors waiting to be opened.")
+print("\nThe boat takes you to the island where you find 3 doors waiting to be opened.")
 while True:
     choice3 = input('Which door will you unlock? Type "Red", "Blue", or "Yellow": ').lower()
     if choice3 == "red":
-        print("It's a room full of fire. Game over.")
+        print("\nIt's a room full of fire. Game over.")
         sys.exit()
     elif choice3 == "blue":
-        print("You enter a room full of beast. Game over.")
+        print("\nYou enter a room full of beast. Game over.")
         sys.exit()
     elif choice3 == "yellow":
-        print("You found the treasure! You Win!")
+        print("\nYou found the treasure! You Win!")
         break
     else:
-        print('Please type either "Red", "Blue" or "Yellow".')
+        print('\nPlease type either "Red", "Blue" or "Yellow".')
