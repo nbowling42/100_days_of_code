@@ -1,11 +1,11 @@
 import random
-import hangman_art
-import hangman_words
+from hangman_art import stages, logo
+from hangman_words import word_list
 
-print(hangman_art.logo)
+print(logo)
 
 lives = 6
-chosen_word = random.choice(hangman_words.word_list)
+chosen_word = random.choice(word_list)
 
 placeholder = ""
 for char in chosen_word:
@@ -47,6 +47,6 @@ while not game_over:
         game_over = True
         print("****************************YOU WIN!!!****************************")
 
-    print(hangman_art.stages[lives])
+    print(stages[lives])
     print(f"****************************{lives}/6 LIVES LEFT****************************")
     print("Word to guess: " + display)
