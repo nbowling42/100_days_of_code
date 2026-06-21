@@ -3,7 +3,8 @@ from art import logo
 print(logo)
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-while True:
+should_continue = True
+while should_continue:
     def caesar(original_text, shift_amount, encode_or_decode):
         #check if user input is valid
         if "encode" != encode_or_decode != "decode":
@@ -33,8 +34,8 @@ while True:
 
     #call the caesar function with the user input and then ask if they want to go again
     caesar(original_text=text, shift_amount=shift, encode_or_decode=direction)
-    go_again = input("Do you want to go again (y/n)?\n").lower()
-    if go_again == "n":
+    restart = input("Do you want to restart the program (y/n)?\n").lower()
+    if restart == "n":
+        should_continue = False
         print("Goodbye!")
-        break
     
