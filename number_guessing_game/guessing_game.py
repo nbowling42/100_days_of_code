@@ -1,5 +1,5 @@
+from random import randint
 from art import logo
-import random
 
 #functions
 def check_guess(num, answer):
@@ -27,7 +27,7 @@ def play_game():
     print("I'm thinking of a number between 1 and 100.")
 
     #choose a random number between 1 and 100 and set the number of attempts based on difficulty level
-    number = random.randint(1, 100)
+    number = randint(1, 100)
     attempts = set_difficulty(input("Choose a difficulty. Type 'easy' or 'hard': ").lower())
     if attempts is None:
         return
