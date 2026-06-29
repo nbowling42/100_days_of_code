@@ -9,7 +9,7 @@ class QuizBrain:
     def next_quetion(self):
         question = self.question_list[self.question_number].text
         self.question_number += 1
-        return input(f"Q.{self.question_number}: {question} (True/False)?: ").title()
+        return input(f"\nQ.{self.question_number}: {question} (True/False)?: ").title()
         
         
     def still_has_questions(self):
@@ -21,6 +21,6 @@ class QuizBrain:
 
         if correct_answer == answer:
             self.score += 1
-            print(f"Correct! Current Score: {self.score}")
+            print(f"Correct! Current Score: {self.score}/{self.question_number}")
         else:
-            print(f"Incorrect. Current Score: {self.score}")
+            print(f"Incorrect. Current Score: {self.score}/{self.question_number}")
