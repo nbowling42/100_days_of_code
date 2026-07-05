@@ -11,11 +11,10 @@ screen.bgcolor("black")
 screen.listen()
 screen.tracer(0)
 
-
 food = Food()
 snake = Snake()
-snake.create_body(5)
 scoreboard = Scoreboard()
+
 screen.onkeypress(key="w", fun=snake.move_up)
 screen.onkeypress(key="s", fun=snake.move_down)
 screen.onkeypress(key="a", fun=snake.turn_left)

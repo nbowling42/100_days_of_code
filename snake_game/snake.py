@@ -15,6 +15,7 @@ class Snake:
     """ A class representing the snake. The snake is composed of multiple segments, each represented by a SnakeSegment instance."""
     def __init__(self):
         self.body = []
+        self.create_body(5)
 
 
     def create_body(self, length):
