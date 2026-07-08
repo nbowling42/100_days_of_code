@@ -13,6 +13,24 @@ class GameBoard:
         self.s.tracer(0)
 
 
+    def make_dashed_line(self):
+        y_cor = (self.s.window_height())
+
+        line = Turtle()
+        line.color("white")
+        line.hideturtle()
+        line.teleport(0, y_cor / 2)
+        line.setheading(270)
+
+        for _ in range(int(y_cor / 20)):
+            line.forward(10)
+            line.penup()
+            line.forward(10)
+            line.pendown()
+        
+        self.s.update()
+
+
     def make_board(self):
         player_paddle = Paddle()
         computer_paddle = Paddle()
@@ -23,23 +41,3 @@ class GameBoard:
         self.s.update()
 
         self.make_dashed_line()
-
-
-
-    
-    def make_dashed_line(self):
-        y_cor = (self.s.window_height())
-
-        line = Turtle()
-        line.color("white")
-        line.hideturtle()
-        line.teleport(0, y_cor / 2)
-        line.setheading(270)
-
-        for _ in range(int(y_cor)):
-            line.forward(10)
-            line.penup()
-            line.forward(10)
-            line.pendown()
-        
-        self.s.update()
