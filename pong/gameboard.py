@@ -1,43 +1,37 @@
-from paddles import Paddle
-from turtle import Turtle, Screen
+from turtle import Turtle
 
 
-class GameBoard:
-
-    def __init__(self):
-        self.s = Screen()
-        self.s.setup(width=800, height=700)
-        self.s.bgcolor("black")
-        self.s.title("Pong")
-        self.s.listen()
-        self.s.tracer(0)
+class ScoreBoard:
+    def __init__(self, screen):
+        self.draw_center_line(screen)
+        self.player = self.display_score(-80, screen, 0)
+        self.computer = self.display_score(80, screen, 0)
+        self.player_score = 0
+        self.computer_score = 0 
 
 
-    def make_dashed_line(self):
-        y_cor = (self.s.window_height())
-
-        line = Turtle()
-        line.color("white")
-        line.hideturtle()
-        line.teleport(0, y_cor / 2)
-        line.setheading(270)
-
-        for _ in range(int(y_cor / 20)):
-            line.forward(10)
-            line.penup()
-            line.forward(10)
-            line.pendown()
-        
-        self.s.update()
+    def draw_center_line(self, screen):
+        self.t = Turtle()
+        self.t.hideturtle()
+        self.t.color("white")
+        self.t.setheading(270)
+        self.t.teleport(0, screen.window_height() / 2)
 
 
-    def make_board(self):
-        player_paddle = Paddle()
-        computer_paddle = Paddle()
+        for _ in range(int(screen.window_height() / 20)):
+            self.t.forward(10)
+            self.t.penup()
+            self.t.forward(10)
+            self.t.pendown()
 
-        x_cor = (self.s.window_width() / 2) - 50
-        player_paddle.t.teleport((x_cor * -1), 0)
-        computer_paddle.t.teleport(x_cor, 0)
-        self.s.update()
 
-        self.make_dashed_line()
+    def display_score(self, screen_x, screen, score):
+        self.t = Turtle()
+        self.t.hideturtle()
+        self.t.color("white")
+        self.t.teleport(screen_x, (screen.window_height() / 2) - 100)
+        self.t.write(f"{score}", font=('Monospace', 64, 'normal'), align="center")
+
+
+    def add_point(self):
+        pass
